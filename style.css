@@ -152,18 +152,31 @@ nav a:hover {
   line-height: 1.9;
 }
 
-#profile h2 {
-  font-size: 5em !important;
+.portfolio-intro {
+  max-width: 1100px;
+  margin: 28px auto 0;
+  line-height: 1.9;
 }
 
 #profile .profile-intro p {
-  font-size: 1.3rem;
-  line-height: 1.9;
+  font-size: 1rem;
+  line-height: 1.8;
   text-align: center;
 }
 
 #profile .profile-intro p + p {
   margin-top: 20px;
+}
+
+#portfolio .portfolio-intro p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+#portfolio .portfolio-intro p + p {
+  margin-top: 8px;
 }
 
 /* CARDS */
@@ -274,7 +287,7 @@ nav a:hover {
 
 .project-layout {
   display: grid;
-  grid-template-columns: 0.82fr 1.66fr;
+  grid-template-columns: 1.45fr 1fr;
   gap: 20px;
   align-items: start;
   margin-top: 30px;
@@ -282,7 +295,7 @@ nav a:hover {
 
 .project-gallery {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
   position: sticky;
   top: 130px;
@@ -291,7 +304,7 @@ nav a:hover {
 
 .project-gallery img {
   width: 100%;
-  height: 280px;
+  height: 320px;
   object-fit: cover;
   border-radius: 24px;
   box-shadow: 0 18px 34px rgba(0, 0, 0, 0.28);
@@ -302,7 +315,7 @@ nav a:hover {
 }
 
 .project-text h3 {
-  font-size: 1.28rem;
+  font-size: 1.15rem;
   line-height: 1.4;
   margin-bottom: 18px;
 }
@@ -311,22 +324,62 @@ nav a:hover {
   margin-top: 16px;
   margin-bottom: 8px;
   color: #9af4e7;
-  font-size: 0.98rem;
+  font-size: 0.92rem;
 }
 
 .project-text p {
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   line-height: 1.65;
 }
 
 .project-list {
   margin-left: 20px;
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   line-height: 1.65;
 }
 
 .project-list li + li {
   margin-top: 5px;
+}
+
+.flowchart-panel {
+  grid-column: 1 / -1;
+  margin-top: 6px;
+  text-align: center;
+}
+
+.flowchart-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #9af4e7;
+}
+
+.flowchart-panel h3 {
+  margin: 0 0 10px;
+  font-size: 1.35rem;
+}
+
+.flowchart-panel p {
+  margin: 0 auto 22px;
+  max-width: 760px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.flowchart-panel img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.96);
+  padding: 18px;
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.26);
+  object-fit: contain;
 }
 
 .profile-gallery {
@@ -335,24 +388,23 @@ nav a:hover {
 }
 
 .profile-gallery .card {
-  width: 360px;
-  border-radius: 20px;
-  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.35);
-  background: transparent;
+  width: 340px;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
 }
 
 .profile-gallery .card img {
-  height: 460px;
-  border-radius: 0;
+  height: 340px;
+  flex-shrink: 0;
 }
 
 .profile-gallery .card-content {
-  position: absolute;
-  margin-top: 0;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  padding: 15px;
-  color: black;
+  position: static;
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .profile-gallery .card:hover {
@@ -366,6 +418,237 @@ nav a:hover {
 
 .inner-page .contact {
   background: transparent;
+}
+
+.inner-page #contact.section {
+  padding-top: 40px;
+  text-align: center;
+}
+
+.inner-page #contact h2,
+.inner-page #contact p {
+  text-align: center;
+}
+
+.inner-page #contact h2 {
+  margin-bottom: 28px;
+}
+
+.contact-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 22px;
+  width: 100%;
+}
+
+.contact-icon-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.phone-trigger {
+  cursor: pointer;
+}
+
+.icon-only-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 1.2rem;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+.icon-only-link:hover {
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.phone-popup {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(4, 6, 10, 0.6);
+  z-index: 20;
+}
+
+.phone-popup[hidden] {
+  display: none;
+}
+
+.phone-popup-card {
+  position: relative;
+  width: min(100%, 360px);
+  padding: 28px;
+  border-radius: 22px;
+  background: #1d222b;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+
+.phone-popup-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  border: 0;
+  background: transparent;
+  color: #f4f7fb;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.phone-popup-label {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8fd7ff;
+}
+
+.phone-popup-number {
+  margin: 0 0 18px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f4f7fb;
+}
+
+.phone-copy-button {
+  border: 0;
+  padding: 13px 18px;
+  border-radius: 999px;
+  background: #f4f7fb;
+  color: #11161d;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.phone-copy-status {
+  min-height: 24px;
+  margin: 14px 0 0;
+  color: rgba(244, 247, 251, 0.82);
+}
+
+.message-box {
+  padding: 28px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(12px);
+}
+
+.whatsapp-label {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #7ef0a8;
+}
+
+.message-box h3 {
+  margin: 0 0 12px;
+  font-size: 1.8rem;
+}
+
+.message-box p {
+  margin: 0 0 18px;
+  color: rgba(244, 247, 251, 0.85);
+  line-height: 1.7;
+}
+
+.message-box textarea {
+  width: 100%;
+  min-height: 140px;
+  margin-bottom: 18px;
+  padding: 16px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  background: rgba(8, 10, 14, 0.28);
+  color: #f4f7fb;
+  font: inherit;
+  line-height: 1.6;
+  resize: none;
+}
+
+.email-label {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8fd7ff;
+}
+
+.whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-radius: 999px;
+  background: #25d366;
+  color: #08100b;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(37, 211, 102, 0.28);
+}
+
+.email-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-radius: 999px;
+  background: #74c0fc;
+  color: #081423;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.email-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(116, 192, 252, 0.28);
 }
 
 /* FOOTER */
@@ -423,6 +706,14 @@ footer {
 
   .project-gallery img {
     height: 220px;
+  }
+
+  .contact-layout {
+    gap: 28px;
+  }
+
+  .contact-actions {
+    grid-template-columns: 1fr;
   }
 
 }
