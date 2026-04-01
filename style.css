@@ -244,11 +244,13 @@ nav a:hover {
   min-height: 420px;
   display: flex;
   flex-direction: column;
+  background: rgba(17, 22, 29, 0.92);
 }
 
 #portfolio .card img {
   height: 340px;
   flex-shrink: 0;
+  display: block;
 }
 
 #portfolio .card-content {
@@ -257,6 +259,22 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 18px 20px;
+  background: transparent;
+  color: #f4f7fb;
+  text-align: center;
+  flex: 1;
+}
+
+#portfolio .card-content h3 {
+  margin: 0 0 10px;
+  color: #ffffff;
+}
+
+#portfolio .card-content p {
+  margin: 0;
+  color: rgba(244, 247, 251, 0.88);
+  line-height: 1.6;
 }
 
 .project-page {
@@ -310,8 +328,91 @@ nav a:hover {
   box-shadow: 0 18px 34px rgba(0, 0, 0, 0.28);
 }
 
+.project-gallery .project-map-vertical {
+  height: 560px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.96);
+  padding: 18px;
+  box-shadow: none;
+}
+
+.ecotourism-gallery .project-map-vertical {
+  grid-column: 1 / -1;
+}
+
+.ecotourism-gallery .eco-highlight-image {
+  background: transparent;
+  padding: 0;
+}
+
+.water-quality-gallery .flowchart-panel {
+  grid-column: 1 / -1;
+}
+
+.water-quality-gallery .wq-highlight-image {
+  background: transparent;
+  padding: 0;
+}
+
+.project-gallery .river-highlight-image {
+  background: transparent;
+  padding: 0;
+}
+
+
+.flood-gallery {
+  grid-template-columns: 1fr;
+}
+
+.flood-figure-panel {
+  text-align: center;
+}
+
+.flood-figure-panel h3 {
+  margin: 0 0 10px;
+  font-size: 1.35rem;
+}
+
+.flood-figure-panel p {
+  margin: 0 auto 22px;
+  max-width: 760px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.flood-gallery .graph-image {
+  height: auto;
+  max-height: 720px;
+  object-fit: contain;
+  background: transparent;
+  padding: 0;
+}
+
+.flood-gallery .map-vertical {
+  height: 820px;
+  width: min(100%, 620px);
+  margin: 0 auto;
+  object-fit: contain;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
 .project-text {
   text-align: left;
+}
+
+.river-analysis-text-panel {
+  min-height: 1120px;
+  margin-top: 0;
+}
+
+.water-quality-text-panel {
+  margin-top: 0;
+}
+
+.ecotourism-text-panel {
+  margin-top: 0;
 }
 
 .project-text h3 {
@@ -382,6 +483,11 @@ nav a:hover {
   object-fit: contain;
 }
 
+.river-map-panel {
+  margin-top: 2px;
+}
+
+
 .profile-gallery {
   margin-top: 40px;
   gap: 30px;
@@ -392,11 +498,13 @@ nav a:hover {
   min-height: 420px;
   display: flex;
   flex-direction: column;
+  background: rgba(17, 22, 29, 0.92);
 }
 
 .profile-gallery .card img {
   height: 340px;
   flex-shrink: 0;
+  display: block;
 }
 
 .profile-gallery .card-content {
@@ -405,6 +513,19 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: transparent;
+  flex: 1;
+}
+
+.profile-gallery .card-content h3 {
+  margin: 0 0 10px;
+  color: #ffffff;
+}
+
+.profile-gallery .card-content p {
+  margin: 0;
+  color: rgba(244, 247, 251, 0.88);
+  line-height: 1.6;
 }
 
 .profile-gallery .card:hover {
