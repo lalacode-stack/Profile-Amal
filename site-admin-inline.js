@@ -29,6 +29,26 @@
     }
   }
 
+  function normalizeAssetPath(value) {
+    if (!value) {
+      return '';
+    }
+
+    const trimmed = value.trim();
+    const normalizedSlashes = trimmed.replace(/\\/g, '/');
+    const assetsIndex = normalizedSlashes.toLowerCase().lastIndexOf('/assets/');
+
+    if (assetsIndex >= 0) {
+      return normalizedSlashes.slice(assetsIndex + 1);
+    }
+
+    if (/^assets\//i.test(normalizedSlashes)) {
+      return normalizedSlashes;
+    }
+
+    return trimmed;
+  }
+
   function getSuggestedImagePath(current) {
     if (!current || !current.startsWith('assets/')) {
       return {
@@ -48,7 +68,16 @@
     }
 
     const [, directory, baseName, numberPart, extension] = match;
-    const nextNumber = numberPart ? String(Number(numberPart) + 1) : '2';
+
+    if (!numberPart) {
+      return {
+        defaultValue: current,
+        example: current,
+        pattern: null
+      };
+    }
+
+    const nextNumber = String(Number(numberPart) + 1);
 
     return {
       defaultValue: current,
@@ -271,7 +300,7 @@
   function setElementValue(element, type, value) {
     switch (type) {
       case 'src':
-        element.src = value;
+        element.src = normalizeAssetPath(value);
         break;
       case 'href':
         element.href = value;
@@ -362,7 +391,7 @@
           return;
         }
 
-        cleaned = next.trim();
+        cleaned = normalizeAssetPath(next);
         const looksLikeAssetPath = /^assets\/.+\.(png|jpe?g|webp|gif|svg)$/i.test(cleaned);
 
         if (!looksLikeAssetPath) {
@@ -371,6 +400,7 @@
         }
       }
 
+      cleaned = normalizeAssetPath(cleaned);
       element.src = cleaned;
       state.storeCache[element.dataset.adminKey] = cleaned;
       setInlineStatus('Path gambar dikemas kini. Klik Save untuk simpan perubahan.');
