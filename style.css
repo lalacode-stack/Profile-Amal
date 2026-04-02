@@ -870,17 +870,19 @@ footer {
   }
 
   .logo {
-    max-width: 145px;
-    font-size: 0.82rem;
+    max-width: none;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    letter-spacing: 0.01em;
   }
 
   nav ul {
-    gap: 2px;
+    gap: 8px;
   }
 
   nav a {
     min-height: 44px;
-    padding: 4px 2px;
+    padding: 4px 3px;
   }
 
   .nav-icon {
@@ -898,20 +900,21 @@ footer {
   }
 
   .overlay h1 {
-    font-size: 2rem;
+    font-size: 1.82rem;
     line-height: 1.12;
   }
 
   .overlay p {
-    font-size: 0.98rem;
+    font-size: 0.92rem;
   }
 
   .tagline {
-    font-size: 1.02rem;
+    font-size: 0.94rem;
   }
 
   .btn {
-    padding: 12px 22px;
+    padding: 11px 20px;
+    font-size: 0.96rem;
   }
 }
 
@@ -921,17 +924,18 @@ footer {
   }
 
   .logo {
-    max-width: 120px;
-    font-size: 0.74rem;
+    max-width: none;
+    font-size: 0.62rem;
+    white-space: nowrap;
   }
 
   nav ul {
-    gap: 0;
+    gap: 5px;
   }
 
   nav a {
     min-height: 42px;
-    padding: 4px 1px;
+    padding: 4px 2px;
   }
 
   .nav-icon {
@@ -947,25 +951,25 @@ footer {
   }
 
   .passport-photo {
-    width: 132px;
-    height: 175px;
+    width: 122px;
+    height: 162px;
   }
 
   .overlay h1 {
-    font-size: 1.72rem;
+    font-size: 1.56rem;
   }
 
   .overlay p {
-    font-size: 0.9rem;
+    font-size: 0.84rem;
   }
 
   .tagline {
-    font-size: 0.95rem;
+    font-size: 0.88rem;
   }
 
   .btn {
-    padding: 11px 20px;
-    font-size: 0.95rem;
+    padding: 10px 18px;
+    font-size: 0.9rem;
   }
 }
 
