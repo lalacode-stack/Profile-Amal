@@ -3,6 +3,9 @@
   const SESSION_KEY = 'mukhlis-admin-inline-session';
   const DEFAULT_PIN = 'mukhlis2026';
   const DEFAULT_REMOTE_DOC_PATH = 'siteContent/main';
+  const FORCED_CONTENT = {
+    'home.heroImage': 'assets/profile.jpg'
+  };
 
   let firebaseSettings = null;
 
@@ -300,7 +303,7 @@
   function setElementValue(element, type, value) {
     switch (type) {
       case 'src':
-        element.src = normalizeAssetPath(value);
+        element.setAttribute('src', normalizeAssetPath(value));
         break;
       case 'href':
         element.href = value;
@@ -324,7 +327,7 @@
     const type = element.dataset.adminType || 'text';
     switch (type) {
       case 'src':
-        return element.getAttribute('src') || '';
+        return normalizeAssetPath(element.getAttribute('src') || '');
       case 'href':
         return element.getAttribute('href') || '';
       case 'value':
@@ -340,6 +343,11 @@
     const content = store || state.storeCache || {};
     getAdminElements().forEach((element) => {
       const key = element.dataset.adminKey;
+      if (Object.prototype.hasOwnProperty.call(FORCED_CONTENT, key)) {
+        setElementValue(element, element.dataset.adminType || 'text', FORCED_CONTENT[key]);
+        return;
+      }
+
       if (Object.prototype.hasOwnProperty.call(content, key)) {
         setElementValue(element, element.dataset.adminType || 'text', content[key]);
       }
@@ -351,6 +359,11 @@
     getAdminElements().forEach((element) => {
       nextStore[element.dataset.adminKey] = getElementValue(element);
     });
+
+    Object.keys(FORCED_CONTENT).forEach((key) => {
+      nextStore[key] = FORCED_CONTENT[key];
+    });
+
     state.storeCache = nextStore;
     return nextStore;
   }
@@ -401,7 +414,7 @@
       }
 
       cleaned = normalizeAssetPath(cleaned);
-      element.src = cleaned;
+      element.setAttribute('src', cleaned);
       state.storeCache[element.dataset.adminKey] = cleaned;
       setInlineStatus('Path gambar dikemas kini. Klik Save untuk simpan perubahan.');
       return;
