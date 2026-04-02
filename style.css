@@ -782,37 +782,39 @@ footer {
 
 @media (max-width: 768px) {
   nav {
-    padding: 16px 14px 14px;
-    flex-direction: column;
-    gap: 10px;
+    padding: 14px 16px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
   }
 
   nav ul {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 6px;
-    align-items: start;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    flex: 1;
   }
 
   .logo {
-    font-size: 1.05rem;
-    text-align: center;
+    font-size: 0.95rem;
+    flex: 0 1 auto;
+    line-height: 1.15;
   }
 
   nav a {
     min-width: 0;
-    min-height: 52px;
-    padding: 8px 4px;
+    min-height: 48px;
+    padding: 6px 4px;
   }
 
   .nav-icon {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .nav-label {
     margin-top: 5px;
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .section {
@@ -859,6 +861,112 @@ footer {
     grid-template-columns: 1fr;
   }
 
+}
+
+@media (max-width: 640px) {
+  nav {
+    padding: 12px 12px;
+    gap: 10px;
+  }
+
+  .logo {
+    max-width: 145px;
+    font-size: 0.82rem;
+  }
+
+  nav ul {
+    gap: 2px;
+  }
+
+  nav a {
+    min-height: 44px;
+    padding: 4px 2px;
+  }
+
+  .nav-icon {
+    font-size: 14px;
+  }
+
+  .nav-label {
+    margin-top: 4px;
+    font-size: 9px;
+  }
+
+  .overlay {
+    max-width: min(100%, 340px);
+    padding: 0 12px;
+  }
+
+  .overlay h1 {
+    font-size: 2rem;
+    line-height: 1.12;
+  }
+
+  .overlay p {
+    font-size: 0.98rem;
+  }
+
+  .tagline {
+    font-size: 1.02rem;
+  }
+
+  .btn {
+    padding: 12px 22px;
+  }
+}
+
+@media (max-width: 420px) {
+  nav {
+    padding: 10px 10px;
+  }
+
+  .logo {
+    max-width: 120px;
+    font-size: 0.74rem;
+  }
+
+  nav ul {
+    gap: 0;
+  }
+
+  nav a {
+    min-height: 42px;
+    padding: 4px 1px;
+  }
+
+  .nav-icon {
+    font-size: 13px;
+  }
+
+  .nav-label {
+    font-size: 8px;
+  }
+
+  .overlay {
+    max-width: min(100%, 310px);
+  }
+
+  .passport-photo {
+    width: 132px;
+    height: 175px;
+  }
+
+  .overlay h1 {
+    font-size: 1.72rem;
+  }
+
+  .overlay p {
+    font-size: 0.9rem;
+  }
+
+  .tagline {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    padding: 11px 20px;
+    font-size: 0.95rem;
+  }
 }
 
 .admin-entry-link {
