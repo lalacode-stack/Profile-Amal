@@ -11,7 +11,6 @@
     firebaseReady: false,
     backendReady: false,
     firestore: null,
-    storage: null,
     auth: null,
     docRef: null,
     helpers: null,
@@ -19,8 +18,7 @@
     storeCache: {},
     remoteDocPath: DEFAULT_REMOTE_DOC_PATH,
     editMode: false,
-    launcherVisible: false,
-    pendingImageElement: null
+    launcherVisible: false
   };
 
   function setInlineStatus(message) {
@@ -30,37 +28,37 @@
     }
   }
 
-  function getSafeFileName(fileName) {
-    const rawName = fileName || 'image';
-    return rawName.replace(/[^a-z0-9.\-_]+/gi, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
-  }
-
-  function getFileExtension(file) {
-    if (file && file.name && file.name.includes('.')) {
-      return file.name.split('.').pop().toLowerCase();
+  function getSuggestedImagePath(current) {
+    if (!current || !current.startsWith('assets/')) {
+      return {
+        defaultValue: 'assets/images/',
+        example: 'assets/images/profile-baru.jpg',
+        pattern: null
+      };
     }
 
-    if (file && file.type && file.type.includes('/')) {
-      return file.type.split('/').pop().toLowerCase();
+    const match = current.match(/^(.*\/)([^\/]+?)(\d+)?(\.[^.]+)$/);
+    if (!match) {
+      return {
+        defaultValue: current,
+        example: current,
+        pattern: null
+      };
     }
 
-    return 'png';
-  }
+    const [, directory, baseName, numberPart, extension] = match;
+    const nextNumber = numberPart ? String(Number(numberPart) + 1) : '2';
 
-  function buildStoragePath(file) {
-    const extension = getFileExtension(file);
-    const rawName = file && file.name ? file.name.replace(/\.[^.]+$/, '') : 'image';
-    const safeName = getSafeFileName(rawName) || 'image';
-    return `site-assets/${Date.now()}-${safeName}.${extension}`;
-  }
-
-  function readFileAsDataUrl(file) {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = () => reject(new Error('Gagal membaca fail gambar.'));
-      reader.readAsDataURL(file);
-    });
+    return {
+      defaultValue: current,
+      example: `${directory}${baseName}${nextNumber}${extension}`,
+      pattern: {
+        directory,
+        baseName,
+        numberPart: numberPart || '1',
+        extension
+      }
+    };
   }
 
   function isLauncherAllowed() {
@@ -154,11 +152,10 @@
     }
 
     try {
-      const [{ initializeApp }, authModule, firestoreModule, storageModule] = await Promise.all([
+      const [{ initializeApp }, authModule, firestoreModule] = await Promise.all([
         import('https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js'),
         import('https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js'),
-        import('https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js'),
-        import('https://www.gstatic.com/firebasejs/12.0.0/firebase-storage.js')
+        import('https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js')
       ]);
 
       const app = initializeApp({
@@ -172,17 +169,13 @@
 
       state.auth = authModule.getAuth(app);
       state.firestore = firestoreModule.getFirestore(app);
-      state.storage = storageModule.getStorage(app);
       state.docRef = firestoreModule.doc(state.firestore, state.remoteDocPath);
       state.helpers = {
         getDoc: firestoreModule.getDoc,
         setDoc: firestoreModule.setDoc,
         onAuthStateChanged: authModule.onAuthStateChanged,
         signInWithEmailAndPassword: authModule.signInWithEmailAndPassword,
-        signOut: authModule.signOut,
-        storageRef: storageModule.ref,
-        uploadBytes: storageModule.uploadBytes,
-        getDownloadURL: storageModule.getDownloadURL
+        signOut: authModule.signOut
       };
 
       state.mode = 'firebase';
@@ -325,19 +318,52 @@
   }
 
   function handleInlineFieldAction(element) {
-    const key = element.dataset.adminKey;
     const type = element.dataset.adminType || 'text';
 
     if (type === 'src') {
-      const picker = document.getElementById('inlineAdminImagePicker');
-      if (!picker) {
-        setInlineStatus('Pemilih fail gambar tidak tersedia.');
-        return;
+      const current = element.getAttribute('src') || '';
+      const suggestion = getSuggestedImagePath(current);
+      let cleaned = '';
+
+      if (suggestion.pattern) {
+        const nextNumber = window.prompt(
+          `Masukkan nombor baru untuk gambar ini.\nNama fail akan ikut pola: ${suggestion.pattern.baseName}[nombor]${suggestion.pattern.extension}`,
+          suggestion.pattern.numberPart
+        );
+
+        if (nextNumber === null) {
+          return;
+        }
+
+        const onlyNumber = nextNumber.trim();
+        if (!/^\d+$/.test(onlyNumber)) {
+          setInlineStatus('Masukkan nombor sahaja, contohnya 2 atau 3.');
+          return;
+        }
+
+        cleaned = `${suggestion.pattern.directory}${suggestion.pattern.baseName}${onlyNumber}${suggestion.pattern.extension}`;
+      } else {
+        const next = window.prompt(
+          `Masukkan path gambar dari folder assets.\nContoh ikut nama semasa: ${suggestion.example}`,
+          suggestion.defaultValue
+        );
+
+        if (next === null) {
+          return;
+        }
+
+        cleaned = next.trim();
+        const looksLikeAssetPath = /^assets\/.+\.(png|jpe?g|webp|gif|svg)$/i.test(cleaned);
+
+        if (!looksLikeAssetPath) {
+          setInlineStatus('Guna path relatif dari folder assets, contoh: assets/images/profile-baru.jpg');
+          return;
+        }
       }
 
-      state.pendingImageElement = element;
-      picker.value = '';
-      picker.click();
+      element.src = cleaned;
+      state.storeCache[element.dataset.adminKey] = cleaned;
+      setInlineStatus('Path gambar dikemas kini. Klik Save untuk simpan perubahan.');
       return;
     }
 
@@ -454,7 +480,7 @@
             <button type="button" class="admin-secondary-btn" id="inlineAdminReset">Reset</button>
             <button type="button" class="admin-secondary-btn" id="inlineAdminLogout">Logout</button>
           </div>
-          <p class="inline-admin-help">Teks boleh edit terus. Untuk gambar, klik item itu dan pilih fail dari gallery atau folder anda semasa edit mode aktif.</p>
+          <p class="inline-admin-help">Teks boleh edit terus. Untuk gambar, klik item itu dan masukkan path fail dari folder assets semasa edit mode aktif.</p>
         </div>
 
         <p class="inline-admin-status" id="inlineAdminStatus"></p>
@@ -462,14 +488,6 @@
     `;
 
     document.body.appendChild(panel);
-
-    const imagePicker = document.createElement('input');
-    imagePicker.type = 'file';
-    imagePicker.id = 'inlineAdminImagePicker';
-    imagePicker.accept = 'image/*';
-    imagePicker.hidden = true;
-    document.body.appendChild(imagePicker);
-
     entry.addEventListener('click', (event) => {
       event.preventDefault();
       panel.hidden = !panel.hidden;
@@ -552,78 +570,13 @@
     updateInlineAdminView();
   }
 
-  async function handleInlineImageSelection(event) {
-    const file = event.target.files && event.target.files[0];
-    const element = state.pendingImageElement;
-
-    state.pendingImageElement = null;
-
-    if (!file || !element) {
-      return;
-    }
-
-    if (!file.type.startsWith('image/')) {
-      setInlineStatus('Sila pilih fail gambar yang sah.');
-      event.target.value = '';
-      return;
-    }
-
-    const key = element.dataset.adminKey;
-
-    try {
-      setInlineStatus('Memuat naik gambar...');
-
-      let nextSource = '';
-
-      if (state.mode === 'firebase' && state.firebaseReady && state.storage && state.helpers) {
-        if (!state.user) {
-          throw new Error('Anda perlu login untuk upload gambar ke Firebase.');
-        }
-
-        const storagePath = buildStoragePath(file);
-        const imageRef = state.helpers.storageRef(state.storage, storagePath);
-        await state.helpers.uploadBytes(imageRef, file);
-        nextSource = await state.helpers.getDownloadURL(imageRef);
-      } else {
-        nextSource = await readFileAsDataUrl(file);
-      }
-
-      element.src = nextSource;
-      state.storeCache[key] = nextSource;
-      setInlineStatus(
-        state.mode === 'firebase'
-          ? 'Gambar berjaya dimuat naik. Klik Save untuk simpan perubahan.'
-          : 'Gambar berjaya dipilih. Klik Save untuk simpan perubahan pada browser ini.'
-      );
-    } catch (error) {
-      const code = error && error.code ? error.code : '';
-
-      if (code.includes('storage/unauthorized')) {
-        setInlineStatus('Upload gambar disekat. Semak Firebase Storage rules untuk akaun admin.');
-      } else if (code.includes('storage/bucket-not-found') || code.includes('storage/project-not-found')) {
-        setInlineStatus('Firebase Storage belum aktif. Buka Firebase Console dan aktifkan Storage dahulu.');
-      } else if (code.includes('storage/retry-limit-exceeded')) {
-        setInlineStatus('Upload gambar mengambil masa terlalu lama. Cuba lagi.');
-      } else {
-        setInlineStatus(error.message || 'Upload gambar gagal.');
-      }
-    } finally {
-      event.target.value = '';
-    }
-  }
-
   async function bindInlineAdminActions() {
     const form = document.getElementById('inlineAdminLoginForm');
     if (!form) {
       return;
     }
 
-    const imagePicker = document.getElementById('inlineAdminImagePicker');
-
     form.addEventListener('submit', handleInlineLogin);
-    if (imagePicker) {
-      imagePicker.addEventListener('change', handleInlineImageSelection);
-    }
 
     document.getElementById('inlineAdminToggleEdit').addEventListener('click', () => {
       if (state.editMode) {
