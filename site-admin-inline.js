@@ -17,6 +17,7 @@
     user: null,
     storeCache: {},
     remoteDocPath: DEFAULT_REMOTE_DOC_PATH,
+    adminElements: [],
     editMode: false,
     launcherVisible: false
   };
@@ -256,7 +257,15 @@
   }
 
   function getAdminElements() {
-    return Array.from(document.querySelectorAll('[data-admin-key]'));
+    if (!state.adminElements.length) {
+      state.adminElements = Array.from(document.querySelectorAll('[data-admin-key]'));
+    }
+    return state.adminElements;
+  }
+
+  function cacheAdminElements() {
+    state.adminElements = Array.from(document.querySelectorAll('[data-admin-key]'));
+    return state.adminElements;
   }
 
   function setElementValue(element, type, value) {
@@ -318,6 +327,7 @@
   }
 
   function handleInlineFieldAction(element) {
+    const key = element.dataset.adminKey;
     const type = element.dataset.adminType || 'text';
 
     if (type === 'src') {
@@ -385,11 +395,16 @@
     }
   }
 
-  function enableEditMode() {
+  async function enableEditMode() {
+    const adminElements = getAdminElements();
+
+    setInlineStatus('Mengaktifkan edit mode...');
+    await new Promise((resolve) => window.requestAnimationFrame(resolve));
+
     state.editMode = true;
     document.body.classList.add('admin-inline-active');
 
-    getAdminElements().forEach((element) => {
+    adminElements.forEach((element) => {
       const type = element.dataset.adminType || 'text';
       element.classList.add('admin-editable');
 
@@ -406,13 +421,17 @@
         element.dataset.adminClickable = 'true';
       }
     });
+
+    setInlineStatus('Edit mode aktif.');
   }
 
   function disableEditMode() {
+    const adminElements = getAdminElements();
+
     state.editMode = false;
     document.body.classList.remove('admin-inline-active');
 
-    getAdminElements().forEach((element) => {
+    adminElements.forEach((element) => {
       const type = element.dataset.adminType || 'text';
       element.classList.remove('admin-editable');
       element.removeAttribute('data-admin-clickable');
@@ -425,6 +444,8 @@
         element.readOnly = true;
       }
     });
+
+    setInlineStatus('Edit mode dihentikan.');
   }
 
   function injectInlineAdmin() {
@@ -578,11 +599,11 @@
 
     form.addEventListener('submit', handleInlineLogin);
 
-    document.getElementById('inlineAdminToggleEdit').addEventListener('click', () => {
+    document.getElementById('inlineAdminToggleEdit').addEventListener('click', async () => {
       if (state.editMode) {
         disableEditMode();
       } else {
-        enableEditMode();
+        await enableEditMode();
       }
       updateInlineAdminView();
     });
@@ -668,6 +689,7 @@
   async function boot() {
     injectInlineAdmin();
     injectLauncherHotspot();
+    cacheAdminElements();
     await loadOptionalFirebaseConfig();
     await initBackend();
     applyStoredContent(state.storeCache);
