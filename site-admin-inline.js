@@ -22,7 +22,7 @@
   };
 
   function isLauncherAllowed() {
-    return window.location.search.includes('admin=1') || sessionStorage.getItem('mukhlis-admin-launcher') === 'visible';
+    return window.location.search.includes('admin=1');
   }
 
   function showLauncher() {
@@ -34,7 +34,6 @@
     state.launcherVisible = true;
     entry.hidden = false;
     document.body.classList.add('admin-launcher-visible');
-    sessionStorage.setItem('mukhlis-admin-launcher', 'visible');
   }
 
   function injectLauncherHotspot() {
