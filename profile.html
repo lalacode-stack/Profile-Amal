@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PROFILE | MUKHLIS - Profile</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -10,7 +11,7 @@
 
 <!-- NAVBAR -->
 <nav>
-  <div class="logo">MUHAMMAD AMAL MUKHLIS</div>
+  <div class="logo" data-admin-key="site.logo">MUHAMMAD AMAL MUKHLIS</div>
   <ul>
     <li><a href="home.html" aria-label="Home" title="Home"><i class="fas fa-house nav-icon"></i><span class="nav-label">Home</span></a></li>
     <li><a href="profile.html" aria-label="Profile" title="Profile"><i class="fas fa-user nav-icon"></i><span class="nav-label">Profile</span></a></li>
@@ -21,38 +22,38 @@
 
 <!-- PROFILE -->
 <section id="profile" class="section">
-  <h2 style="font-size: 3em;">About Me</h2>
+  <h2 style="font-size: 3em;" data-admin-key="profile.heading">About Me</h2>
   <div class="profile-intro">
-    <p>
+    <p data-admin-key="profile.intro1">
       I am Muhammad Amal Mukhlis bin Saufi, a Geography graduate from Universiti Kebangsaan Malaysia, specializing in GIS, hydrology, and spatial data analysis. I have hands-on experience in mapping, flood modeling, and managing geospatial databases, applying GIS tools to solve real-world environmental and water resource challenges.
     </p>
-    <p>
+    <p data-admin-key="profile.intro2">
       Proficient in QGIS, ArcMap, ArcGIS Pro, HEC-RAS, and data analysis with Excel, I am dedicated to delivering innovative, data-driven solutions for flood risk assessment, water resource management, and spatial planning.
     </p>
   </div>
 
   <div class="cards profile-gallery">
     <div class="card">
-      <img src="assets/Field Experience1.jpg" alt="Mukhlis fieldwork activity">
+      <img src="assets/Field Experience1.jpg" alt="Mukhlis fieldwork activity" data-admin-key="profile.card1Image" data-admin-type="src">
       <div class="card-content">
-        <h3>Field Experience</h3>
-        <p>Hands-on involvement in site observation, sampling, and environmental study.</p>
+        <h3 data-admin-key="profile.card1Title">Field Experience</h3>
+        <p data-admin-key="profile.card1Text">Hands-on involvement in site observation, sampling, and environmental study.</p>
       </div>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e" alt="Natural landscape research">
+      <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e" alt="Natural landscape research" data-admin-key="profile.card2Image" data-admin-type="src">
       <div class="card-content">
-        <h3>Environmental Focus</h3>
-        <p>Interested in sustainability, landscape systems, and hydrological processes.</p>
+        <h3 data-admin-key="profile.card2Title">Environmental Focus</h3>
+        <p data-admin-key="profile.card2Text">Interested in sustainability, landscape systems, and hydrological processes.</p>
       </div>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2" alt="GIS and mapping work">
+      <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2" alt="GIS and mapping work" data-admin-key="profile.card3Image" data-admin-type="src">
       <div class="card-content">
-        <h3>GIS & Mapping</h3>
-        <p>Applying spatial tools to better understand rivers, flood risks, and land use.</p>
+        <h3 data-admin-key="profile.card3Title">GIS & Mapping</h3>
+        <p data-admin-key="profile.card3Text">Applying spatial tools to better understand rivers, flood risks, and land use.</p>
       </div>
     </div>
   </div>
@@ -60,9 +61,12 @@
 
 <div style="flex-grow: 1;"></div>
 
+<a href="admin.html" class="admin-entry-link" aria-label="Open admin panel">Admin Panel</a>
+
 <footer>
-  <p>© 2026 Mukhlis | Profile Mukhlis</p>
+  <p data-admin-key="site.footer">© 2026 Mukhlis | Profile Mukhlis</p>
 </footer>
 
+<script src="site-admin-inline.js"></script>
 </body>
 </html>

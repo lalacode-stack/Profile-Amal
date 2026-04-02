@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PROFILE | MUKHLIS - Home</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -10,7 +11,7 @@
 
 <!-- NAVBAR -->
 <nav>
-  <div class="logo">MUHAMMAD AMAL MUKHLIS</div>
+  <div class="logo" data-admin-key="site.logo">MUHAMMAD AMAL MUKHLIS</div>
   <ul>
     <li><a href="home.html" aria-label="Home" title="Home"><i class="fas fa-house nav-icon"></i><span class="nav-label">Home</span></a></li>
     <li><a href="profile.html" aria-label="Profile" title="Profile"><i class="fas fa-user nav-icon"></i><span class="nav-label">Profile</span></a></li>
@@ -22,17 +23,22 @@
 <!-- HOME -->
 <section id="home" class="home">
   <div class="overlay">
-    <img src="assets/profile.jpg" alt="Passport photo of Muhammad Amal Mukhlis" class="passport-photo">
-    <h1>MUHAMMAD AMAL MUKHLIS BIN SAUFI</h1>
-    <p>Bachelor of Social Sciences with Honours (Geography)</p>
-    <p class="tagline">Hydrology | Sustainability | Mapping</p>
-    <a href="portfolio.html" class="btn">Explore My Work</a>
+    <img src="assets/profile.jpg" alt="Passport photo of Muhammad Amal Mukhlis" class="passport-photo" data-admin-key="home.heroImage" data-admin-type="src">
+    <h1 data-admin-key="home.name">MUHAMMAD AMAL MUKHLIS BIN SAUFI</h1>
+    <p data-admin-key="home.degree">Bachelor of Social Sciences with Honours (Geography)</p>
+    <p class="tagline" data-admin-key="home.tagline">Hydrology | Sustainability | Mapping</p>
+    <a href="portfolio.html" class="btn" data-admin-key="home.ctaLink" data-admin-type="href">
+      <span data-admin-key="home.ctaLabel">Explore My Work</span>
+    </a>
   </div>
 </section>
 
+<a href="admin.html" class="admin-entry-link" aria-label="Open admin panel">Admin Panel</a>
+
 <footer>
-  <p>© 2026 Mukhlis | Profile Mukhlis</p>
+  <p data-admin-key="site.footer">© 2026 Mukhlis | Profile Mukhlis</p>
 </footer>
 
+<script src="site-admin-inline.js"></script>
 </body>
 </html>

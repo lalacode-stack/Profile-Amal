@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PROFILE | MUKHLIS - Flood Mapping</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -9,7 +10,7 @@
 <body class="inner-page" style="display: flex; flex-direction: column; min-height: 100vh;">
 
 <nav>
-  <div class="logo">MUHAMMAD AMAL MUKHLIS</div>
+  <div class="logo" data-admin-key="site.logo">MUHAMMAD AMAL MUKHLIS</div>
   <ul>
     <li><a href="home.html" aria-label="Home" title="Home"><i class="fas fa-house nav-icon"></i><span class="nav-label">Home</span></a></li>
     <li><a href="profile.html" aria-label="Profile" title="Profile"><i class="fas fa-user nav-icon"></i><span class="nav-label">Profile</span></a></li>
@@ -19,26 +20,26 @@
 </nav>
 
 <section class="section project-page">
-  <h2 style="font-size: 3em;">Flood Mapping (GIS)</h2>
+  <h2 style="font-size: 3em;" data-admin-key="flood.heading">Flood Mapping (GIS)</h2>
   <div class="project-layout">
     <div class="project-gallery flood-gallery">
       <div class="project-panel flood-figure-panel">
-        <span class="flowchart-label">Flood Mapping Figure</span>
-        <h3>Tren Luahan Stesen Telemetri Kampung Linsum, Linggi.</h3>
-        <p>Sumber: Kajian Makmal 2025</p>
-        <img class="graph-image" src="assets/fm1.jpg" alt="Flood mapping graph">
+        <span class="flowchart-label" data-admin-key="flood.figure1Label">Flood Mapping Figure</span>
+        <h3 data-admin-key="flood.figure1Title">Tren Luahan Stesen Telemetri Kampung Linsum, Linggi.</h3>
+        <p data-admin-key="flood.figure1Text">Sumber: Kajian Makmal 2025</p>
+        <img class="graph-image" src="assets/fm1.jpg" alt="Flood mapping graph" data-admin-key="flood.figure1Image" data-admin-type="src">
       </div>
 
       <div class="project-panel flood-figure-panel">
-        <span class="flowchart-label">Flood Mapping Figure</span>
-        <h3>Kalibrasi Hasil Simulasi Banjir Dengan Peta Banjir di Kawasan Sungai Linggi.</h3>
-        <p>Sumber: RTD 2045</p>
-        <img class="map-vertical" src="assets/fm2.jpg" alt="Flood mapping map">
+        <span class="flowchart-label" data-admin-key="flood.figure2Label">Flood Mapping Figure</span>
+        <h3 data-admin-key="flood.figure2Title">Kalibrasi Hasil Simulasi Banjir Dengan Peta Banjir di Kawasan Sungai Linggi.</h3>
+        <p data-admin-key="flood.figure2Text">Sumber: RTD 2045</p>
+        <img class="map-vertical" src="assets/fm2.jpg" alt="Flood mapping map" data-admin-key="flood.figure2Image" data-admin-type="src">
       </div>
     </div>
 
     <div class="project-panel project-text">
-      <h3>Project: Flood Mapping (GIS)</h3>
+      <h3 data-admin-key="flood.projectTitle">Project: Flood Mapping (GIS)</h3>
 
       <h4>Project Background</h4>
       <p>Floods frequently impact communities and infrastructure along the Linggi River. Existing water level threshold values are outdated, reducing the effectiveness of flood warning systems. This study aims to reassess and update threshold values to improve flood risk management and disaster preparedness in the basin.</p>
@@ -84,14 +85,17 @@
       </ul>
     </div>
   </div>
-  <a href="portfolio.html" class="btn">Back to Portfolio</a>
+  <a href="portfolio.html" class="btn"><span data-admin-key="flood.backButton">Back to Portfolio</span></a>
 </section>
 
 <div style="flex-grow: 1;"></div>
 
+<a href="admin.html" class="admin-entry-link" aria-label="Open admin panel">Admin Panel</a>
+
 <footer>
-  <p>© 2026 Mukhlis | Profile Mukhlis</p>
+  <p data-admin-key="site.footer">© 2026 Mukhlis | Profile Mukhlis</p>
 </footer>
 
+<script src="site-admin-inline.js"></script>
 </body>
 </html>

@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PROFILE | MUKHLIS - Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -10,7 +11,7 @@
 
 <!-- NAVBAR -->
 <nav>
-  <div class="logo">MUHAMMAD AMAL MUKHLIS</div>
+  <div class="logo" data-admin-key="site.logo">MUHAMMAD AMAL MUKHLIS</div>
   <ul>
     <li><a href="home.html" aria-label="Home" title="Home"><i class="fas fa-house nav-icon"></i><span class="nav-label">Home</span></a></li>
     <li><a href="profile.html" aria-label="Profile" title="Profile"><i class="fas fa-user nav-icon"></i><span class="nav-label">Profile</span></a></li>
@@ -21,49 +22,49 @@
 
 <!-- PORTFOLIO -->
 <section id="portfolio" class="section">
-  <h2 style="font-size: 3em;">Portfolio</h2>
+  <h2 style="font-size: 3em;" data-admin-key="portfolio.heading">Portfolio</h2>
   <div class="portfolio-intro">
-    <p>Highlights of</p>
-    <p>GIS & Spatial Analysis | Hydrology & Water Sampling | Ecotourism & Spatial Research Projects</p>
+    <p data-admin-key="portfolio.intro1">Highlights of</p>
+    <p data-admin-key="portfolio.intro2">GIS & Spatial Analysis | Hydrology & Water Sampling | Ecotourism & Spatial Research Projects</p>
   </div>
 
   <div class="cards">
-    <a href="river-analysis.html" class="card-link">
+    <a href="river-analysis.html" class="card-link" data-admin-key="portfolio.card1Link" data-admin-type="href">
       <div class="card">
-        <img src="https://images.pexels.com/photos/13717332/pexels-photo-13717332.jpeg" alt="River Analysis">
+        <img src="https://images.pexels.com/photos/13717332/pexels-photo-13717332.jpeg" alt="River Analysis" data-admin-key="portfolio.card1Image" data-admin-type="src">
         <div class="card-content">
-          <h3>River Analysis</h3>
-          <p>Study of river flow, discharge, and sediment processes.</p>
+          <h3 data-admin-key="portfolio.card1Title">River Analysis</h3>
+          <p data-admin-key="portfolio.card1Text">Study of river flow, discharge, and sediment processes.</p>
         </div>
       </div>
     </a>
 
-    <a href="flood-mapping.html" class="card-link">
+    <a href="flood-mapping.html" class="card-link" data-admin-key="portfolio.card2Link" data-admin-type="href">
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b" alt="Flood Mapping">
+        <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b" alt="Flood Mapping" data-admin-key="portfolio.card2Image" data-admin-type="src">
         <div class="card-content">
-          <h3>Flood Mapping (GIS)</h3>
-          <p>Spatial analysis of flood-prone areas using GIS tools.</p>
+          <h3 data-admin-key="portfolio.card2Title">Flood Mapping (GIS)</h3>
+          <p data-admin-key="portfolio.card2Text">Spatial analysis of flood-prone areas using GIS tools.</p>
         </div>
       </div>
     </a>
 
-    <a href="water-quality.html" class="card-link">
+    <a href="water-quality.html" class="card-link" data-admin-key="portfolio.card3Link" data-admin-type="href">
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1592162626225-3eab4117f248?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="Water Quality">
+        <img src="https://images.unsplash.com/photo-1592162626225-3eab4117f248?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="Water Quality" data-admin-key="portfolio.card3Image" data-admin-type="src">
         <div class="card-content">
-          <h3>Water Quality Study</h3>
-          <p>Field sampling and laboratory testing for water conditions.</p>
+          <h3 data-admin-key="portfolio.card3Title">Water Quality Study</h3>
+          <p data-admin-key="portfolio.card3Text">Field sampling and laboratory testing for water conditions.</p>
         </div>
       </div>
     </a>
 
-    <a href="ecotourism-spatial-research.html" class="card-link">
+    <a href="ecotourism-spatial-research.html" class="card-link" data-admin-key="portfolio.card4Link" data-admin-type="href">
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b" alt="Ecotourism and Spatial Research">
+        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b" alt="Ecotourism and Spatial Research" data-admin-key="portfolio.card4Image" data-admin-type="src">
         <div class="card-content">
-          <h3>Ecotourism & Spatial Research</h3>
-          <p>Research on tourism potential, site planning, and spatial-based environmental insight.</p>
+          <h3 data-admin-key="portfolio.card4Title">Ecotourism & Spatial Research</h3>
+          <p data-admin-key="portfolio.card4Text">Research on tourism potential, site planning, and spatial-based environmental insight.</p>
         </div>
       </div>
     </a>
@@ -71,17 +72,20 @@
 
   <br><br>
 
-  <a href="https://portfoliomukhlis.my.canva.site/" target="_blank" class="btn">
-    View Full Portfolio
+  <a href="https://portfoliomukhlis.my.canva.site/" target="_blank" class="btn" data-admin-key="portfolio.canvaLink" data-admin-type="href">
+    <span data-admin-key="portfolio.canvaLabel">View Full Portfolio</span>
   </a>
 
 </section>
 
 <div style="flex-grow: 1;"></div>
 
+<a href="admin.html" class="admin-entry-link" aria-label="Open admin panel">Admin Panel</a>
+
 <footer>
-  <p>© 2026 Mukhlis | Profile Mukhlis</p>
+  <p data-admin-key="site.footer">© 2026 Mukhlis | Profile Mukhlis</p>
 </footer>
 
+<script src="site-admin-inline.js"></script>
 </body>
 </html>

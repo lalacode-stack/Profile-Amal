@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PROFILE | MUKHLIS - Water Quality</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -9,7 +10,7 @@
 <body class="inner-page" style="display: flex; flex-direction: column; min-height: 100vh;">
 
 <nav>
-  <div class="logo">MUHAMMAD AMAL MUKHLIS</div>
+  <div class="logo" data-admin-key="site.logo">MUHAMMAD AMAL MUKHLIS</div>
   <ul>
     <li><a href="home.html" aria-label="Home" title="Home"><i class="fas fa-house nav-icon"></i><span class="nav-label">Home</span></a></li>
     <li><a href="profile.html" aria-label="Profile" title="Profile"><i class="fas fa-user nav-icon"></i><span class="nav-label">Profile</span></a></li>
@@ -19,14 +20,14 @@
 </nav>
 
 <section class="section project-page">
-  <h2 style="font-size: 3em;">Water Quality Study</h2>
+  <h2 style="font-size: 3em;" data-admin-key="water.heading">Water Quality Study</h2>
   <div class="project-layout">
     <div class="project-gallery water-quality-gallery">
       <div class="project-panel flowchart-panel river-map-panel">
-        <span class="flowchart-label">Water Quality Highlight</span>
-        <h3>Water Quality Field Activity</h3>
-        <p>Selected field documentation from water quality sampling and monitoring work.</p>
-        <img class="project-map-vertical wq-highlight-image" src="assets/wq3.jpg" alt="Water quality image 3">
+        <span class="flowchart-label" data-admin-key="water.highlightLabel">Water Quality Highlight</span>
+        <h3 data-admin-key="water.highlightTitle">Water Quality Field Activity</h3>
+        <p data-admin-key="water.highlightText">Selected field documentation from water quality sampling and monitoring work.</p>
+        <img class="project-map-vertical wq-highlight-image" src="assets/wq3.jpg" alt="Water quality image 3" data-admin-key="water.highlightImage" data-admin-type="src">
       </div>
       <img src="assets/wq1.jpg" alt="Water quality image 1">
       <img src="assets/wq2.jpg" alt="Water quality image 2">
@@ -36,7 +37,7 @@
     </div>
 
     <div class="project-panel project-text water-quality-text-panel">
-      <h3>Water Quality Sampling &amp; Field Monitoring</h3>
+      <h3 data-admin-key="water.projectTitle">Water Quality Sampling &amp; Field Monitoring</h3>
 
       <p>Performed water quality sampling across multiple states in Malaysia, covering up to 30 monitoring stations per day. This role required strong field coordination, adaptability to diverse site conditions, and strict adherence to Standard Operating Procedures (SOP).</p>
 
@@ -81,14 +82,17 @@
       </ul>
     </div>
   </div>
-  <a href="portfolio.html" class="btn">Back to Portfolio</a>
+  <a href="portfolio.html" class="btn"><span data-admin-key="water.backButton">Back to Portfolio</span></a>
 </section>
 
 <div style="flex-grow: 1;"></div>
 
+<a href="admin.html" class="admin-entry-link" aria-label="Open admin panel">Admin Panel</a>
+
 <footer>
-  <p>© 2026 Mukhlis | Profile Mukhlis</p>
+  <p data-admin-key="site.footer">© 2026 Mukhlis | Profile Mukhlis</p>
 </footer>
 
+<script src="site-admin-inline.js"></script>
 </body>
 </html>

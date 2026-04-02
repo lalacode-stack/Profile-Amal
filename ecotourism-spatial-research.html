@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PROFILE | MUKHLIS - Ecotourism & Spatial Research</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -9,7 +10,7 @@
 <body class="inner-page" style="display: flex; flex-direction: column; min-height: 100vh;">
 
 <nav>
-  <div class="logo">MUHAMMAD AMAL MUKHLIS</div>
+  <div class="logo" data-admin-key="site.logo">MUHAMMAD AMAL MUKHLIS</div>
   <ul>
     <li><a href="home.html" aria-label="Home" title="Home"><i class="fas fa-house nav-icon"></i><span class="nav-label">Home</span></a></li>
     <li><a href="profile.html" aria-label="Profile" title="Profile"><i class="fas fa-user nav-icon"></i><span class="nav-label">Profile</span></a></li>
@@ -19,14 +20,14 @@
 </nav>
 
 <section class="section project-page">
-  <h2 style="font-size: 3em;">Ecotourism & Spatial Research</h2>
+  <h2 style="font-size: 3em;" data-admin-key="eco.heading">Ecotourism & Spatial Research</h2>
   <div class="project-layout">
     <div class="project-gallery ecotourism-gallery">
       <div class="project-panel flowchart-panel river-map-panel">
-        <span class="flowchart-label">Spatial Research Highlight</span>
-        <h3>Ecotourism Site Visual</h3>
-        <p>Highlighted spatial output for ecotourism and site research analysis.</p>
-        <img class="project-map-vertical eco-highlight-image" src="assets/eco1.jpg" alt="Ecotourism image 1">
+        <span class="flowchart-label" data-admin-key="eco.highlightLabel">Spatial Research Highlight</span>
+        <h3 data-admin-key="eco.highlightTitle">Ecotourism Site Visual</h3>
+        <p data-admin-key="eco.highlightText">Highlighted spatial output for ecotourism and site research analysis.</p>
+        <img class="project-map-vertical eco-highlight-image" src="assets/eco1.jpg" alt="Ecotourism image 1" data-admin-key="eco.highlightImage" data-admin-type="src">
       </div>
       <img src="assets/eco2.jpg" alt="Ecotourism image 2">
       <img src="assets/eco3.jpg" alt="Ecotourism image 3">
@@ -36,7 +37,7 @@
     </div>
 
     <div class="project-panel project-text ecotourism-text-panel">
-      <h3>Project: Spatial Model for Hot Spring Locations as Potential Ecotourism Sites in Ulu Slim, Perak</h3>
+      <h3 data-admin-key="eco.projectTitle">Project: Spatial Model for Hot Spring Locations as Potential Ecotourism Sites in Ulu Slim, Perak</h3>
 
       <h4>Project Background</h4>
       <p>Ulu Slim in Perak has several natural hot springs with potential for ecotourism development. However, a systematic study to identify the most suitable locations for sustainable tourism is lacking. This project applies spatial modeling and GIS analysis to determine high-potential sites, supporting ecotourism planning and environmental management.</p>
@@ -81,14 +82,17 @@
       </ul>
     </div>
   </div>
-  <a href="portfolio.html" class="btn">Back to Portfolio</a>
+  <a href="portfolio.html" class="btn"><span data-admin-key="eco.backButton">Back to Portfolio</span></a>
 </section>
 
 <div style="flex-grow: 1;"></div>
 
+<a href="admin.html" class="admin-entry-link" aria-label="Open admin panel">Admin Panel</a>
+
 <footer>
-  <p>© 2026 Mukhlis | Profile Mukhlis</p>
+  <p data-admin-key="site.footer">© 2026 Mukhlis | Profile Mukhlis</p>
 </footer>
 
+<script src="site-admin-inline.js"></script>
 </body>
 </html>

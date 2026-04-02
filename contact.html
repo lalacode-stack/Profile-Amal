@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PROFILE | MUKHLIS - Contact</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -10,7 +11,7 @@
 
 <!-- NAVBAR -->
 <nav>
-  <div class="logo">MUHAMMAD AMAL MUKHLIS</div>
+  <div class="logo" data-admin-key="site.logo">MUHAMMAD AMAL MUKHLIS</div>
   <ul>
     <li><a href="home.html" aria-label="Home" title="Home"><i class="fas fa-house nav-icon"></i><span class="nav-label">Home</span></a></li>
     <li><a href="profile.html" aria-label="Profile" title="Profile"><i class="fas fa-user nav-icon"></i><span class="nav-label">Profile</span></a></li>
@@ -23,31 +24,31 @@
 <section id="contact" class="section contact">
   <div class="contact-layout">
     <div class="contact-details">
-      <h2 style="font-size: 3em;">Contact</h2>
+      <h2 style="font-size: 3em;" data-admin-key="contact.heading">Contact</h2>
       <div class="contact-icon-row">
-        <a class="contact-link icon-only-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=amalmukhlis02@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Send Email" title="Send Email"><i class="fas fa-envelope"></i></a>
-        <a class="contact-link icon-only-link" href="https://www.linkedin.com/in/amal-mukhlis-a2a9891a3" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" title="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
-        <button class="contact-link icon-only-link phone-trigger" type="button" aria-label="Show Phone Number" title="Show Phone Number" data-phone-number="018-9016869"><i class="fas fa-phone"></i></button>
+        <a class="contact-link icon-only-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=amalmukhlis02@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Send Email" title="Send Email" data-admin-key="contact.emailLink" data-admin-type="href"><i class="fas fa-envelope"></i></a>
+        <a class="contact-link icon-only-link" href="https://www.linkedin.com/in/amal-mukhlis-a2a9891a3" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" title="LinkedIn Profile" data-admin-key="contact.linkedinLink" data-admin-type="href"><i class="fab fa-linkedin"></i></a>
+        <button class="contact-link icon-only-link phone-trigger" type="button" aria-label="Show Phone Number" title="Show Phone Number" data-phone-number="018-9016869" data-admin-key="contact.phoneNumber" data-admin-type="phone"><i class="fas fa-phone"></i></button>
       </div>
     </div>
     <div class="contact-actions">
       <div class="message-box whatsapp-box">
-        <span class="whatsapp-label">Direct Message</span>
-        <h3>Chat on WhatsApp</h3>
-        <p>Send a quick message for collaboration, project discussion, or any inquiry.</p>
-        <textarea readonly>Hello Mukhlis, saya nak bertanya tentang portfolio anda.</textarea>
-        <a class="whatsapp-button" href="https://wa.me/60189016869?text=Hello%20Mukhlis%2C%20saya%20nak%20bertanya%20tentang%20portfolio%20anda." target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-whatsapp"></i> Message on WhatsApp
+        <span class="whatsapp-label" data-admin-key="contact.whatsappLabel">Direct Message</span>
+        <h3 data-admin-key="contact.whatsappHeading">Chat on WhatsApp</h3>
+        <p data-admin-key="contact.whatsappText">Send a quick message for collaboration, project discussion, or any inquiry.</p>
+        <textarea readonly data-admin-key="contact.whatsappMessage" data-admin-type="value">Hello Mukhlis, saya nak bertanya tentang portfolio anda.</textarea>
+        <a class="whatsapp-button" href="https://wa.me/60189016869?text=Hello%20Mukhlis%2C%20saya%20nak%20bertanya%20tentang%20portfolio%20anda." target="_blank" rel="noopener noreferrer" data-admin-key="contact.whatsappLink" data-admin-type="href">
+          <i class="fab fa-whatsapp"></i> <span data-admin-key="contact.whatsappButton">Message on WhatsApp</span>
         </a>
       </div>
 
       <div class="message-box email-box">
-        <span class="email-label">Email Message</span>
-        <h3>Send by Email</h3>
-        <p>Use email for formal inquiries, proposals, or longer project details.</p>
-        <textarea readonly>Subject: Portfolio Inquiry&#10;&#10;Hello Mukhlis, saya ingin hubungi anda berkenaan portfolio dan peluang kerjasama.</textarea>
-        <a class="email-button" href="https://mail.google.com/mail/?view=cm&fs=1&to=amalmukhlis02@gmail.com&su=Portfolio%20Inquiry&body=Hello%20Mukhlis%2C%20saya%20ingin%20hubungi%20anda%20berkenaan%20portfolio%20dan%20peluang%20kerjasama." target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-paper-plane"></i> Send Email
+        <span class="email-label" data-admin-key="contact.emailLabel">Email Message</span>
+        <h3 data-admin-key="contact.emailHeading">Send by Email</h3>
+        <p data-admin-key="contact.emailText">Use email for formal inquiries, proposals, or longer project details.</p>
+        <textarea readonly data-admin-key="contact.emailMessage" data-admin-type="value">Subject: Portfolio Inquiry&#10;&#10;Hello Mukhlis, saya ingin hubungi anda berkenaan portfolio dan peluang kerjasama.</textarea>
+        <a class="email-button" href="https://mail.google.com/mail/?view=cm&fs=1&to=amalmukhlis02@gmail.com&su=Portfolio%20Inquiry&body=Hello%20Mukhlis%2C%20saya%20ingin%20hubungi%20anda%20berkenaan%20portfolio%20dan%20peluang%20kerjasama." target="_blank" rel="noopener noreferrer" data-admin-key="contact.emailActionLink" data-admin-type="href">
+          <i class="fas fa-paper-plane"></i> <span data-admin-key="contact.emailButton">Send Email</span>
         </a>
       </div>
     </div>
@@ -58,7 +59,7 @@
   <div class="phone-popup-card">
     <button class="phone-popup-close" type="button" aria-label="Close phone popup">&times;</button>
     <span class="phone-popup-label">Phone Number</span>
-    <p class="phone-popup-number" id="phoneNumberText">018-9016869</p>
+    <p class="phone-popup-number" id="phoneNumberText" data-phone-display>018-9016869</p>
     <button class="phone-copy-button" type="button" id="copyPhoneButton">Copy Number</button>
     <p class="phone-copy-status" id="copyPhoneStatus" aria-live="polite"></p>
   </div>
@@ -66,10 +67,13 @@
 
 <div style="flex-grow: 1;"></div>
 
+<a href="admin.html" class="admin-entry-link" aria-label="Open admin panel">Admin Panel</a>
+
 <footer>
-  <p>© 2026 Mukhlis | Profile Mukhlis</p>
+  <p data-admin-key="site.footer">© 2026 Mukhlis | Profile Mukhlis</p>
 </footer>
 
+<script src="site-admin-inline.js"></script>
 <script>
   const phoneTrigger = document.querySelector('.phone-trigger');
   const phonePopup = document.getElementById('phonePopup');
@@ -79,9 +83,8 @@
   const closePhonePopupButton = document.querySelector('.phone-popup-close');
 
   if (phoneTrigger && phonePopup && phoneNumberText && copyPhoneButton && copyPhoneStatus && closePhonePopupButton) {
-    const phoneNumber = phoneTrigger.dataset.phoneNumber || phoneNumberText.textContent.trim();
-
     phoneTrigger.addEventListener('click', () => {
+      const phoneNumber = phoneTrigger.dataset.phoneNumber || phoneNumberText.textContent.trim();
       phoneNumberText.textContent = phoneNumber;
       copyPhoneStatus.textContent = '';
       phonePopup.hidden = false;
@@ -98,6 +101,8 @@
     });
 
     copyPhoneButton.addEventListener('click', async () => {
+      const phoneNumber = phoneTrigger.dataset.phoneNumber || phoneNumberText.textContent.trim();
+
       try {
         await navigator.clipboard.writeText(phoneNumber);
         copyPhoneStatus.textContent = 'Number copied.';

@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PROFILE | MUKHLIS - River Analysis</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -9,7 +10,7 @@
 <body class="inner-page" style="display: flex; flex-direction: column; min-height: 100vh;">
 
 <nav>
-  <div class="logo">MUHAMMAD AMAL MUKHLIS</div>
+  <div class="logo" data-admin-key="site.logo">MUHAMMAD AMAL MUKHLIS</div>
   <ul>
     <li><a href="home.html" aria-label="Home" title="Home"><i class="fas fa-house nav-icon"></i><span class="nav-label">Home</span></a></li>
     <li><a href="profile.html" aria-label="Profile" title="Profile"><i class="fas fa-user nav-icon"></i><span class="nav-label">Profile</span></a></li>
@@ -19,14 +20,14 @@
 </nav>
 
 <section class="section project-page">
-  <h2 style="font-size: 3em;">River Analysis</h2>
+  <h2 style="font-size: 3em;" data-admin-key="river.heading">River Analysis</h2>
   <div class="project-layout">
     <div class="project-gallery">
       <div class="project-panel flowchart-panel river-map-panel">
-        <span class="flowchart-label">River Analysis Highlight</span>
-        <h3>River Analysis Field Activity</h3>
-        <p>Selected field documentation from river monitoring and flood modeling work.</p>
-        <img class="project-map-vertical river-highlight-image" src="assets/riveranalysis5.jpg" alt="River analysis image 5">
+        <span class="flowchart-label" data-admin-key="river.highlightLabel">River Analysis Highlight</span>
+        <h3 data-admin-key="river.highlightTitle">River Analysis Field Activity</h3>
+        <p data-admin-key="river.highlightText">Selected field documentation from river monitoring and flood modeling work.</p>
+        <img class="project-map-vertical river-highlight-image" src="assets/riveranalysis5.jpg" alt="River analysis image 5" data-admin-key="river.highlightImage" data-admin-type="src">
       </div>
       <img src="assets/riveranalysis1.jpg" alt="River analysis image 1">
       <img src="assets/riveranalysis2.jpg" alt="River analysis image 2">
@@ -34,15 +35,15 @@
       <img src="assets/riveranalysis4.jpg" alt="River analysis image 4">
       <img src="assets/riveranalysis6.jpg" alt="River analysis image 6">
       <div class="project-panel flowchart-panel river-map-panel">
-        <span class="flowchart-label">Methodology Flowchart</span>
-        <h3>River Analysis Workflow</h3>
-        <p>Overall process flow used for the Linggi River flood modeling and spatial analysis study.</p>
-        <img class="project-map-vertical" src="assets/riveranalysis7.jpg" alt="River analysis map image">
+        <span class="flowchart-label" data-admin-key="river.workflowLabel">Methodology Flowchart</span>
+        <h3 data-admin-key="river.workflowTitle">River Analysis Workflow</h3>
+        <p data-admin-key="river.workflowText">Overall process flow used for the Linggi River flood modeling and spatial analysis study.</p>
+        <img class="project-map-vertical" src="assets/riveranalysis7.jpg" alt="River analysis map image" data-admin-key="river.workflowImage" data-admin-type="src">
       </div>
     </div>
 
     <div class="project-panel project-text river-analysis-text-panel">
-      <h3>Project: Flood Modeling Study in Determining Water Level Threshold Values: A Case Study of the Linggi River, Negeri Sembilan</h3>
+      <h3 data-admin-key="river.projectTitle">Project: Flood Modeling Study in Determining Water Level Threshold Values: A Case Study of the Linggi River, Negeri Sembilan</h3>
 
       <h4>Project Background</h4>
       <p>Floods frequently impact communities and infrastructure along the Linggi River. Existing water level threshold values are outdated, reducing the effectiveness of flood warning systems. This study aims to reassess and update threshold values to improve flood risk management and disaster preparedness in the basin.</p>
@@ -89,14 +90,17 @@
     </div>
   </div>
 
-  <a href="portfolio.html" class="btn">Back to Portfolio</a>
+  <a href="portfolio.html" class="btn"><span data-admin-key="river.backButton">Back to Portfolio</span></a>
 </section>
 
 <div style="flex-grow: 1;"></div>
 
+<a href="admin.html" class="admin-entry-link" aria-label="Open admin panel">Admin Panel</a>
+
 <footer>
-  <p>© 2026 Mukhlis | Profile Mukhlis</p>
+  <p data-admin-key="site.footer">© 2026 Mukhlis | Profile Mukhlis</p>
 </footer>
 
+<script src="site-admin-inline.js"></script>
 </body>
 </html>
