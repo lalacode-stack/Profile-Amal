@@ -473,7 +473,23 @@
         status.textContent = 'PIN tidak tepat.';
       }
     } catch (error) {
-      status.textContent = 'Login gagal.';
+      if (state.mode === 'firebase') {
+        const code = error && error.code ? error.code : '';
+
+        if (code.includes('invalid-credential') || code.includes('wrong-password') || code.includes('invalid-password')) {
+          status.textContent = 'Email atau password Firebase tidak betul.';
+        } else if (code.includes('user-not-found')) {
+          status.textContent = 'User admin tidak dijumpai dalam Firebase Authentication.';
+        } else if (code.includes('too-many-requests')) {
+          status.textContent = 'Terlalu banyak cubaan login. Cuba lagi sebentar.';
+        } else if (code.includes('network-request-failed')) {
+          status.textContent = 'Sambungan internet atau akses ke Firebase gagal.';
+        } else {
+          status.textContent = `Login Firebase gagal${code ? `: ${code}` : '.'}`;
+        }
+      } else {
+        status.textContent = 'Login gagal.';
+      }
     }
 
     updateInlineAdminView();
