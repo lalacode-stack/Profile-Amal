@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="inner-page" style="display: flex; flex-direction: column; min-height: 100vh;">
+
+<body class="inner-page career-page" style="display: flex; flex-direction: column; min-height: 100vh;">
 
 <!-- NAVBAR -->
 <nav>
@@ -21,27 +22,30 @@
   </ul>
 </nav>
 
-<!-- CAREER -->
-<section id="career" class="section career-section">
-  <div class="career-hero">
-    <p class="career-kicker" data-admin-key="career.kicker">Perjalanan Kerjaya</p>
-    <h1 data-admin-key="career.heading">Dari Projek Disertasi UKM ke GIS Executive Blackcube Solutions</h1>
-    <p class="career-lede" data-admin-key="career.subheading">Ringkasan pengalaman profesional dalam GIS, pengurusan pangkalan data spatial menggunakan Geoserver, analisis data vector, kerja lapangan, dan konfigurasi sistem IT untuk agensi tempatan seperti Majlis Bandaraya Diraja Klang.</p>
-    <div class="career-actions">
-      <a class="btn" href="contact.html" data-admin-key="career.ctaPrimary" data-admin-type="href">Hubungi Saya</a>
-      <a class="btn btn-ghost" href="portfolio.html" data-admin-key="career.ctaSecondary" data-admin-type="href">Lihat Portfolio</a>
-    </div>
+<!-- CAREER HERO BANNER -->
+<section id="career-hero" class="career-hero" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('assets/Field Experience1.jpg'); background-size: cover; background-position: center; padding: 100px 20px 200px; position: relative;">
+  <canvas class="particles-canvas" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></canvas>
+  <div style="position: relative; z-index: 1; text-align: center; color: white; max-width: 800px; margin: 0 auto;">
+    <p class="career-kicker" data-admin-key="career.kicker">Career Journey</p>
+    <h1 data-admin-key="career.heading">Geographer</h1>
+    <p class="career-lede" data-admin-key="career.subheading">This page showcases my career journey, highlighting my experiences, skills, and professional goals.</p>
   </div>
+</section>
 
-  <div class="career-timeline">
-    <article class="timeline-item">
-      <div class="timeline-dot" aria-hidden="true"></div>
-      <div class="timeline-date" data-admin-key="career.item1.dates">Jan 2025 - Jun 2025</div>
-      <div class="timeline-card">
-        <h3 data-admin-key="career.item1.title">DISSERTATION PROJECT</h3>
-        <p class="timeline-meta" data-admin-key="career.item1.place">Universiti Kebangsaan Malaysia (UKM) <img src="assets/UKM Malaysia logo.png" alt="UKM Logo" class="timeline-logo" style="width:40px;height:40px;vertical-align:middle;margin-left:10px;"></p>
-        <p data-admin-key="career.item1.desc">Flood Modelling of the Sungai Linggi Basin, Seremban with Emphasis on Updated Threshold Values.</p>
-        <ul class="timeline-highlights">
+<!-- CAREER TIMELINE -->
+<section id="career" class="section career-section" style="padding-top: 0;">
+  <div class="career-timeline-new">
+
+    <!-- ITEM 1: DISSERTATION -->
+    <article class="timeline-item-new" data-item="1">
+      <div class="timeline-date-new" data-admin-key="career.item1.dates">Jan 2025 - Jun 2025</div>
+      <div class="timeline-image" style="background-image: url('assets/fm1.jpg');"></div>
+
+      <div class="timeline-card-new">
+<h3 data-admin-key="career.item1.title"><i class="fas fa-graduation-cap"></i> <strong>DISSERTATION PROJECT</strong></h3>
+        <p class="timeline-meta-new" data-admin-key="career.item1.place">Universiti Kebangsaan Malaysia (UKM) <img src="assets/UKM Malaysia logo.png" alt="UKM Logo" style="width:40px;height:40px;vertical-align:middle;margin-left:10px;"></p>
+        <p class="timeline-desc-new" data-admin-key="career.item1.desc">Flood Modelling of the Sungai Linggi Basin, Seremban with Emphasis on Updated Threshold Values.</p>
+        <ul class="timeline-highlights-new">
           <li data-admin-key="career.item1.point1">Conducted flood modelling of the Sungai Linggi Basin to reassess existing flood threshold values that are no longer relevant under current hydrological conditions.</li>
           <li data-admin-key="career.item1.point2">Identified and analyzed updated threshold levels based on recent hydrological and spatial data.</li>
           <li data-admin-key="career.item1.point3">Evaluated the limitations of existing threshold criteria and proposed improved threshold values to enhance flood risk assessment.</li>
@@ -49,28 +53,34 @@
       </div>
     </article>
 
-    <article class="timeline-item">
-      <div class="timeline-dot" aria-hidden="true"></div>
-      <div class="timeline-date" data-admin-key="career.item2.dates">Nov 2023 - May 2025</div>
-      <div class="timeline-card">
-        <h3 data-admin-key="career.item2.title">In-situ data collection</h3>
-        <p class="timeline-meta" data-admin-key="career.item2.place">UKM Pakarunding (UKMPSB) <img src="assets/UKM Malaysia logo.png" alt="UKM Logo" class="timeline-logo" style="width:40px;height:40px;vertical-align:middle;margin-left:10px;"></p>
-        <p data-admin-key="career.item2.desc">Conducted on-site water sampling at designated study locations.</p>
-        <ul class="timeline-highlights">
+    <!-- ITEM 2: UKMPSB In-situ -->
+
+    <article class="timeline-item-new" data-item="2">
+      <div class="timeline-date-new" data-admin-key="career.item2.dates">Nov 2023 - May 2025</div>
+      <div class="timeline-image" style="background-image: url('assets/wq1.jpg');"></div>
+
+      <div class="timeline-card-new">
+<h3 data-admin-key="career.item2.title"><i class="fas fa-flask"></i> <strong>In-situ data collection</strong></h3>
+        <p class="timeline-meta-new" data-admin-key="career.item2.place">UKM Pakarunding (UKMPSB) <img src="assets/UKM Malaysia logo.png" alt="UKM Logo" style="width:40px;height:40px;vertical-align:middle;margin-left:10px;"></p>
+        <p class="timeline-desc-new" data-admin-key="career.item2.desc">Conducted on-site water sampling at designated study locations.</p>
+        <ul class="timeline-highlights-new">
           <li data-admin-key="career.item2.point1">Performed hydraulic surveys to support field assessments.</li>
           <li data-admin-key="career.item2.point2">Operated in-situ measurement instruments, including Aqua TROLL 500 and YSI digital sampling systems.</li>
         </ul>
       </div>
     </article>
 
-    <article class="timeline-item">
-      <div class="timeline-dot" aria-hidden="true"></div>
-      <div class="timeline-date" data-admin-key="career.item3.dates">1 Nov 2024 - 30 Nov 2024</div>
-      <div class="timeline-card">
-        <h3 data-admin-key="career.item3.title">ENUMERATOR</h3>
-        <p class="timeline-meta" data-admin-key="career.item3.place">CNH Advantech Sdn Bhd <img src="assets/cnh-logo.png" alt="CNH Advantech Logo" class="timeline-logo" style="width:40px;height:40px;vertical-align:middle;margin-left:10px;"></p>
-        <p data-admin-key="career.item3.desc">Research Title: Spatial Model for Hot Spring Locations as Potential Ecotourism Sites in Ulu Slim.</p>
-        <ul class="timeline-highlights">
+    <!-- ITEM 3: CNH Enumerator -->
+
+    <article class="timeline-item-new" data-item="3">
+      <div class="timeline-date-new" data-admin-key="career.item3.dates">2024</div>
+      <div class="timeline-image" style="background-image: url('assets/eco1.jpg');"></div>
+
+      <div class="timeline-card-new">
+<h3 data-admin-key="career.item3.title"><i class="fas fa-clipboard-list"></i> <strong>ENUMERATOR</strong></h3>
+        <p class="timeline-meta-new" data-admin-key="career.item3.place">CNH Advantech Sdn Bhd <i class="fas fa-building" style="width:40px;height:40px;font-size:24px;color:#00e0c6;vertical-align:middle;margin-left:10px;"></i></p>
+        <p class="timeline-desc-new" data-admin-key="career.item3.desc">Research Title: Spatial Model for Hot Spring Locations as Potential Ecotourism Sites in Ulu Slim.</p>
+        <ul class="timeline-highlights-new">
           <li data-admin-key="career.item3.point1">Distributed and collected survey questionnaires among respondents in the Ulu Slim area.</li>
           <li data-admin-key="career.item3.point2">Conducted field data collection to support spatial and ecotourism research analysis.</li>
           <li data-admin-key="career.item3.point3">Entered, organized, and managed survey data accurately using Microsoft Excel.</li>
@@ -79,47 +89,57 @@
       </div>
     </article>
 
-    <article class="timeline-item">
-      <div class="timeline-dot" aria-hidden="true"></div>
-      <div class="timeline-date" data-admin-key="career.item4.dates">2024 - May 2025</div>
-      <div class="timeline-card">
-        <h3 data-admin-key="career.item4.title">In-situ data collection</h3>
-        <p class="timeline-meta" data-admin-key="career.item4.place">CNH Advantech Sdn Bhd <img src="assets/cnh-logo.png" alt="CNH Advantech Logo" class="timeline-logo" style="width:40px;height:40px;vertical-align:middle;margin-left:10px;"></p>
-        <p data-admin-key="career.item4.desc">Conducted on-site water sampling at designated study locations.</p>
-        <ul class="timeline-highlights">
+    <!-- ITEM 4: CNH Advantech In-situ -->
+
+    <article class="timeline-item-new" data-item="4">
+      <div class="timeline-date-new" data-admin-key="career.item4.dates">2024 - May 2025</div>
+      <div class="timeline-image" style="background-image: url('assets/wq2.jpg');"></div>
+
+      <div class="timeline-card-new">
+<h3 data-admin-key="career.item4.title"><i class="fas fa-flask"></i> <strong>In-situ data collection</strong></h3>
+        <p class="timeline-meta-new" data-admin-key="career.item4.place">CNH Advantech Sdn Bhd <i class="fas fa-building" style="width:40px;height:40px;font-size:24px;color:#00e0c6;vertical-align:middle;margin-left:10px;"></i></p>
+        <p class="timeline-desc-new" data-admin-key="career.item4.desc">Conducted on-site water sampling at designated study locations.</p>
+        <ul class="timeline-highlights-new">
           <li data-admin-key="career.item4.point1">Performed hydraulic surveys to support field assessments.</li>
           <li data-admin-key="career.item4.point2">Operated in-situ measurement instruments, including Aqua TROLL 500 and YSI digital sampling systems.</li>
         </ul>
       </div>
     </article>
 
-    <article class="timeline-item">
-      <div class="timeline-dot" aria-hidden="true"></div>
-      <div class="timeline-date" data-admin-key="career.item5.dates">July 2025 - Nov 2025</div>
-      <div class="timeline-card">
-        <h3 data-admin-key="career.item5.title">Internship Technician (GIS) - Full Time</h3>
-        <p class="timeline-meta" data-admin-key="career.item5.place">Blackcube Solutions Sdn Bhd <img src="assets/Blackcube solution Sdn Bhd Logo.jpg" alt="Blackcube Solutions Logo" class="timeline-logo" style="width:40px;height:40px;vertical-align:middle;margin-left:10px;"></p>
-        <p data-admin-key="career.item5.desc">Responsible for creating spatial database and analyzing GIS data for System GES-WEB for Majlis Bandaraya Diraja Klang.</p>
-        <ul class="timeline-highlights">
+    <!-- ITEM 5: Blackcube Internship -->
+
+    <article class="timeline-item-new" data-item="5">
+      <div class="timeline-date-new" data-admin-key="career.item5.dates">July 2025 - Nov 2025</div>
+      <div class="timeline-image" style="background-image: url('assets/profile1.jpg');"></div>
+
+      <div class="timeline-card-new">
+<h3 data-admin-key="career.item5.title"><i class="fas fa-user-tie"></i> <strong>Internship Technician (GIS) - Full Time</strong></h3>
+        <p class="timeline-meta-new" data-admin-key="career.item5.place">Blackcube Solutions Sdn Bhd <img src="assets/Blackcube solution Sdn Bhd Logo.jpg" alt="Blackcube Solutions Logo" style="width:40px;height:40px;vertical-align:middle;margin-left:10px;"></p>
+        <p class="timeline-desc-new" data-admin-key="career.item5.desc">Responsible for creating spatial database and analyzing GIS data for System GES-WEB for Majlis Bandaraya Diraja Klang.</p>
+        <ul class="timeline-highlights-new">
           <li data-admin-key="career.item5.point1">In-situ data collection.</li>
         </ul>
       </div>
     </article>
 
-    <article class="timeline-item">
-      <div class="timeline-dot" aria-hidden="true"></div>
-      <div class="timeline-date" data-admin-key="career.item6.dates">Sept 2025 - Present</div>
-      <div class="timeline-card">
-        <h3 data-admin-key="career.item6.title"></h3>GIS Executive and Technical Assistant</h3>
-        <p class="timeline-meta" data-admin-key="career.item6.place">Blackcube Solutions Sdn Bhd <img src="assets/Blackcube solution Sdn Bhd Logo.jpg" alt="Blackcube Solutions Logo" class="timeline-logo" style="width:40px;height:40px;vertical-align:middle;margin-left:10px;"></p>
-        <p data-admin-key="career.item6.desc">Responsible for creating spatial database and analyzing GIS data for System GES-WEB for Majlis Bandaraya Diraja Klang.</p>
-        <ul class="timeline-highlights">
+    <!-- ITEM 6: Blackcube Current - LATEST BOTTOM -->
+
+    <article class="timeline-item-new" data-item="6">
+      <div class="timeline-date-new" data-admin-key="career.item6.dates">Sept 2025 - Present</div>
+      <div class="timeline-image" style="background-image: url('assets/Field Experience1.jpg');"></div>
+
+      <div class="timeline-card-new">
+<h3 data-admin-key="career.item6.title"><i class="fas fa-map-marked-alt"></i> <strong>GIS Executive and Technical Assistant</strong></h3>
+        <p class="timeline-meta-new" data-admin-key="career.item6.place">Blackcube Solutions Sdn Bhd <img src="assets/Blackcube solution Sdn Bhd Logo.jpg" alt="Blackcube Solutions Logo" style="width:40px;height:40px;vertical-align:middle;margin-left:10px;"></p>
+        <p class="timeline-desc-new" data-admin-key="career.item6.desc">Responsible for creating spatial database and analyzing GIS data for System GES-WEB for Majlis Bandaraya Diraja Klang.</p>
+        <ul class="timeline-highlights-new">
           <li data-admin-key="career.item6.point1">Responsible for Data Management of Spatial Database using Geoserver to store the data and analyze the component of vector data.</li>
           <li data-admin-key="career.item6.point2">Responsible for maintaining GIS Database.</li>
           <li data-admin-key="career.item6.point3">Configuration and Setup IT Command Center NEsCOM & IOC MDKPR (Technical Assistant).</li>
         </ul>
       </div>
     </article>
+
   </div>
 </section>
 
@@ -128,9 +148,26 @@
 <a href="admin.html" class="admin-entry-link" aria-label="Open admin panel">Admin Panel</a>
 
 <footer>
-  <p data-admin-key="site.footer">(c) 2026 Mukhlis | Profile Mukhlis</p>
+  <p data-admin-key="site.footer">© 2026 Mukhlis | Profile Mukhlis</p>
 </footer>
 
 <script src="site-admin-inline.js"></script>
+<script>
+// Smooth scroll & performance
+document.documentElement.style.scrollBehavior = 'smooth';
+
+// IntersectionObserver for timeline reveals
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.timeline-item-new').forEach(item => observer.observe(item));
+</script>
+
+<script src="career-scroll.js"></script>
 </body>
 </html>
